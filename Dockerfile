@@ -21,7 +21,7 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
 
 RUN npm install express
 
-EXPOSE 8080
+EXPOSE 80
 
 ## ENTRYPOINT ["node", "app.js"]
 CMD node app.js
