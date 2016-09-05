@@ -16,5 +16,5 @@ RUN ls
 
 EXPOSE 8080
 
-## ENTRYPOINT ["node", "app.js"]
-CMD node app.js
+ENTRYPOINT ["node", "app.js"]
+#CMD node app.js
