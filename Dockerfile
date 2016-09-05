@@ -6,8 +6,6 @@ RUN apt-get update \
 		numactl \
 	&& rm -rf /var/lib/apt/lists/*
 
-ENV NPM_CONFIG_LOGLEVEL error
-
 ENV NODE_VERSION 5.2.0
 
 RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz" \
@@ -15,11 +13,7 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
 
 ADD app.js /
 
-#RUN npm install express
-
-ENV PORT 8080
-
-EXPOSE $PORT
+EXPOSE 8080
 
 ENTRYPOINT ["node", "app.js"]
 
