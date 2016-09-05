@@ -12,7 +12,7 @@ RUN pwd
 
 RUN ls
 
-EXPOSE 80
+EXPOSE 8080
 
 RUN ls yoapp/
 
