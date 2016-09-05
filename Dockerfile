@@ -5,6 +5,8 @@ RUN apk --update add nodejs
 
 RUN npm install express forever
 
+RUN pwd 
+
 EXPOSE 80
 
 ## ENTRYPOINT ["node", "app.js"]
