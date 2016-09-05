@@ -7,6 +7,8 @@ RUN npm install express forever
 
 RUN pwd 
 
+RUN ls
+
 EXPOSE 80
 
 ## ENTRYPOINT ["node", "app.js"]
