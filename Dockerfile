@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:latest
 
 RUN apt-get update \
 	&& apt-get install -y --no-install-recommends \
@@ -13,9 +13,7 @@ ENV NODE_VERSION 5.2.0
 RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz" \
   && tar -xzf "node-v$NODE_VERSION-linux-x64.tar.gz" -C /usr/local --strip-components=1
 
-RUN apt-get update
-
-RUN apt-get install git
+RUN apt-get update && apt-get install -y git
 
 RUN git clone https://github.com/preboot/angular-webpack.git my-app
 
