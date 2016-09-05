@@ -15,4 +15,4 @@ RUN ls
 EXPOSE 80
 
 ## ENTRYPOINT ["node", "app.js"]
-CMD forever start app.js
+CMD forever start yoapp/app.js
