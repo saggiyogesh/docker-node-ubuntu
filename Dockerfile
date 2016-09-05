@@ -1,20 +1,25 @@
-FROM alpine:3.4
+FROM ubuntu:14.04
 
-RUN apk --update add nodejs 
+RUN apt-get update \
+	&& apt-get install -y --no-install-recommends \
+		ca-certificates curl \
+		numactl \
+	&& rm -rf /var/lib/apt/lists/*
 
-#RUN git clone https://github.com/saggiyogesh/docker-node-ubuntu.git yoapp
+ENV NPM_CONFIG_LOGLEVEL error
 
-#RUN cd yoapp
+ENV NODE_VERSION 5.2.0
+
+RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz" \
+  && tar -xzf "node-v$NODE_VERSION-linux-x64.tar.gz" -C /usr/local --strip-components=1
 
 ADD app.js /
 
 #RUN npm install express
 
-RUN pwd 
+ENV PORT 8080
 
-RUN ls
-
-EXPOSE 8080
+EXPOSE $PORT
 
 ENTRYPOINT ["node", "app.js"]
-#CMD node app.js
+
