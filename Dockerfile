@@ -6,7 +6,7 @@ RUN git clone https://github.com/saggiyogesh/docker-node-ubuntu.git yoapp
 
 RUN cd yoapp
 
-RUN npm install -g express forever
+RUN npm install express
 
 RUN pwd 
 
@@ -14,5 +14,7 @@ RUN ls
 
 EXPOSE 80
 
+RUN ls yoapp/
+
 ## ENTRYPOINT ["node", "app.js"]
-CMD forever start yoapp/app.js
+CMD node yoapp/app.js
