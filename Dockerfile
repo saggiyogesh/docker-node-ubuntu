@@ -8,7 +8,7 @@ RUN apk --update add nodejs
 
 ADD app.js /
 
-RUN npm install express
+#RUN npm install express
 
 RUN pwd 
 
