@@ -3,7 +3,7 @@ FROM alpine:3.4
 RUN apk --update add nodejs
 
 
-RUN npm install express forever
+RUN npm install -g express forever
 
 RUN pwd 
 
